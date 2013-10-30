@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<form xmlns="http://www.intellij.com/uidesigner/form/" version="1" bind-to-class="com.taobao.idea.wuluwa.WuluForm">
+  <grid id="27dc6" binding="rootFrame" custom-create="true" layout-manager="FormLayout">
+    <rowspec value="center:max(d;4px):noGrow"/>
+    <rowspec value="top:4dlu:noGrow"/>
+    <rowspec value="center:max(d;4px):noGrow"/>
+    <rowspec value="top:4dlu:noGrow"/>
+    <rowspec value="center:max(d;4px):noGrow"/>
+    <colspec value="right:-146px:grow"/>
+    <colspec value="left:4dlu:noGrow"/>
+    <colspec value="fill:p:grow"/>
+    <constraints>
+      <xy x="15" y="20" width="651" height="618"/>
+    </constraints>
+    <properties>
+      <alignmentX value="0.6"/>
+      <alignmentY value="0.4"/>
+    </properties>
+    <border type="line">
+      <title-color color="-16777216"/>
+      <color color="-16777216"/>
+    </border>
+    <children>
+      <component id="4e80a" class="javax.swing.JLabel" binding="labelDest">
+        <constraints>
+          <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="4" fill="0" indent="0" use-parent-layout="false"/>
+          <forms defaultalign-horz="false"/>
+        </constraints>
+        <properties>
+          <alignmentY value="0.4"/>
+          <text value="请填写目标路径的替换地址："/>
+        </properties>
+      </component>
+      <component id="77458" class="javax.swing.JButton" binding="testButton">
+        <constraints>
+          <grid row="4" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+          <forms defaultalign-horz="false"/>
+        </constraints>
+        <properties>
+          <text value="Test路径"/>
+        </properties>
+      </component>
+      <component id="857f9" class="javax.swing.JTextField" binding="wordSrc">
+        <constraints>
+          <grid row="0" column="2" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+          <forms/>
+        </constraints>
+        <properties>
+          <preferredSize width="10" height="23"/>
+        </properties>
+      </component>
+      <component id="13b46" class="javax.swing.JTextField" binding="wordDest">
+        <constraints>
+          <grid row="2" column="2" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+          <forms/>
+        </constraints>
+        <properties>
+          <alignmentX value="0.4"/>
+          <preferredSize width="10" height="23"/>
+        </properties>
+      </component>
+      <component id="b28fa" class="javax.swing.JLabel" binding="labelSrc">
+        <constraints>
+          <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="4" fill="0" indent="0" use-parent-layout="false"/>
+          <forms defaultalign-horz="false"/>
+        </constraints>
+        <properties>
+          <alignmentY value="0.4"/>
+          <autoscrolls value="false"/>
+          <text value="请填写修改文件所在目录要替换的地址："/>
+        </properties>
+      </component>
+    </children>
+  </grid>
+</form>
