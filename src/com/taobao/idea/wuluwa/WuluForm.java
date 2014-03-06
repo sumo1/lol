@@ -124,7 +124,7 @@ public class WuluForm {
     /**
      * @noinspection ALL
      */
-    public JComponent $$$getRootComponent$$$() {
+    public JComponent getRootComponent() {
         return rootFrame;
     }
 }

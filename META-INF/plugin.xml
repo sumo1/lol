@@ -1,17 +1,19 @@
 <idea-plugin version="2">
 <id>com.taobao.idea.wuluwa</id>
-<name>wuluboy</name>
-<version>1.0</version>
+<name>Wuluboy</name>
+<version>1.2</version>
 <vendor email="yunshu.xw@taobao.com">alimm</vendor>
 
 <description><![CDATA[
-      Enter short description for your plugin here.<br>
-      <small>most HTML tags may be used</small>
+      Let ur modified web file take effect immediately<br>
+      <small>This plugin copy ur web files to ur project's target directory(which jboss run war package with). Let ur modified web files(such as JS,HTML,JSP,CSS) take effect immediately</small>
       ]]></description>
 
 <change-notes><![CDATA[
-      Add change notes here.<br>
-      <small>most HTML tags may be used</small>
+      Add batch copy button.<br>
+      <small>Add batch copy button, batch copy ur opened web files</small>
+      support more web file and support custom dest path.<br>
+      <small>batch copy support more web file(.vm, .htm) and support custom dest path</small>
       ]]>
 </change-notes>
 
@@ -42,6 +44,10 @@ on how to target different products -->
             description="Copy src webapp files to target of war package" icon="/resource/wulu.png">
         <add-to-group group-id="MainToolBar" relative-to-action="Forward" anchor="after"/>
         <keyboard-shortcut first-keystroke="alt L" keymap="$default"/>
+    </action>
+    <action id="wuluBrother" class="com.taobao.idea.wuluwa.WuluBrother" text="wuluBrother" description="批量互撸" icon="/resource/wulubrother.png">
+        <add-to-group group-id="MainToolBar" anchor="before" relative-to-action="wuluwa"/>
+        <keyboard-shortcut keymap="$default" first-keystroke="shift alt L"/>
     </action>
 </actions>
 </idea-plugin>

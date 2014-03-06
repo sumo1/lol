@@ -3,13 +3,19 @@ package com.taobao.idea.wuluwa;
 import com.intellij.openapi.components.ApplicationComponent;
 import com.intellij.openapi.options.Configurable;
 import com.intellij.openapi.options.ConfigurationException;
+import com.intellij.openapi.project.Project;
+import com.intellij.openapi.ui.DialogBuilder;
 import com.intellij.openapi.ui.Messages;
+import com.intellij.openapi.ui.popup.ActiveIcon;
+import com.intellij.openapi.ui.popup.JBPopup;
+import com.intellij.openapi.ui.popup.JBPopupFactory;
 import com.intellij.openapi.util.JDOMExternalizerUtil;
 import org.apache.commons.lang.StringUtils;
 import org.jetbrains.annotations.Nls;
 import org.jetbrains.annotations.NotNull;
 
 import javax.swing.*;
+import java.awt.*;
 
 /**
  * Author: yunshu.xw
@@ -36,21 +42,22 @@ public class Wuluboy extends JDOMExternalizerUtil implements ApplicationComponen
         return "Wuluboy";
     }
 
-    public void lol(String filePath){
+    public boolean lol(String filePath){
         FileAnalysts fileAnalysts = new FileAnalysts();
         String result = fileAnalysts.getDestFilePath(filePath, srcPath, destPath);
         if(result.startsWith(Constants.ERROR_SIGN)){
             showMessage(result);
-            return;
+            return false;
         }
         if(!fileAnalysts.copy(filePath, result)){
             showMessage("文件拷贝失败。");
-            return;
+            return false;
         }
+        return true;
     }
 
     private void showMessage(String errorMsg) {
-        Messages.showMessageDialog(errorMsg, "出错啦", Messages.getInformationIcon());
+        Messages.showErrorDialog(errorMsg, "出错啦");
     }
 
     @Override
@@ -58,7 +65,7 @@ public class Wuluboy extends JDOMExternalizerUtil implements ApplicationComponen
         if(wuluForm == null){
             wuluForm = new WuluForm();
         }
-        return wuluForm.$$$getRootComponent$$$();
+        return wuluForm.getRootComponent();
     }
 
     @Override
@@ -100,6 +107,10 @@ public class Wuluboy extends JDOMExternalizerUtil implements ApplicationComponen
     @Override
     public String getHelpTopic() {
         return null;
+    }
+
+    public Icon getLolIcon(){
+        return new ImageIcon("/resource/wait.gif", "loling");
     }
 
     public String getSrcPath() {
